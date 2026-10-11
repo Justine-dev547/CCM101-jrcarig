@@ -1,49 +1,54 @@
-# Laboratory Activity 7: The Cloud Operations Engineer
+# System Baseline Report
 
-## Mission Overview
+## 1. Introduction
 
-In this laboratory activity, I performed basic cloud server monitoring using the KillerCoda Ubuntu Playground. I checked the server's memory and disk storage, deployed an Nginx web server using Docker, generated website traffic, and monitored application logs and container performance.
+This report presents the initial health check of the Linux server using the KillerCoda Ubuntu Playground. The purpose is to check the server's available memory and disk storage before deploying a web application.
 
-## Objectives
+## 2. Memory Check
 
-- Check the server's RAM and disk capacity.
-- Monitor CPU activity and running processes.
-- Deploy an Nginx container using Docker.
-- Generate successful and unsuccessful HTTP requests.
-- Examine application logs and container resource usage.
-- Document the results using Markdown.
+*Command used:*
 
-## Monitoring Commands Executed
+free -h
 
-| Command | Purpose |
-|---|---|
-| free -h | Checks memory usage. |
-| df -h / | Checks root filesystem storage. |
-| top | Monitors CPU activity and running processes. |
-| docker --version | Checks the installed Docker version. |
-| docker run -d --name client-website -p 8080:80 nginx | Deploys the Nginx container. |
-| docker ps | Checks running containers. |
-| curl http://localhost:8080 | Sends an HTTP request to the website. |
-| curl http://localhost:8080/hidden-admin-page | Tests a missing webpage. |
-| docker logs client-website | Displays application logs. |
-| docker stats | Monitors container resource usage. |
+*Results:*
 
-## Skills Learned
+- Total RAM: [Enter the value under the total column in the Mem row]
+- Used RAM: [Enter the value under the used column]
+- Available RAM: [Enter the value under the available column]
 
-- Linux server monitoring
-- Docker container deployment
-- HTTP request testing
-- Application log analysis
-- Real-time resource monitoring
-- Technical documentation using Markdown
+*Explanation:*
 
-## Conclusion
+Checking RAM helps determine whether the server has enough memory to handle applications and incoming user requests without experiencing performance problems.
 
-This activity helped me understand the importance of monitoring a cloud server and its applications. By checking system resources, testing the website, reviewing logs, and monitoring Docker metrics, I learned how to identify possible performance problems and check whether a web server is working properly.
+## 3. Disk Storage Check
 
-## Evidence
+*Command used:*
 
-Screenshots are stored in the screenshots/ folder.
+df -h /
 
-localhost
+*Results:*
 
+- Root filesystem capacity: [Enter the value under `Size`]
+- Used storage: [Enter the value under `Used`]
+- Available storage: [Enter the value under `Avail`]
+
+*Why is checking disk space important?*
+
+Checking disk space before a massive traffic surge is important because the server needs enough storage for application files, logs, temporary files, and other data to prevent storage-related problems.
+
+## 4. CPU and Process Monitoring
+
+*Command used:*
+
+top
+
+The top command displays running processes, CPU activity, and memory usage. It helps an administrator observe the server's current workload and identify processes that may be using too many resources.
+
+## 5. Conclusion
+
+The baseline check provides information about the server's initial resources before running the Nginx container. These results can help identify resource limitations and provide a starting point for future monitoring.
+
+## Screenshots
+
+- screenshots/memory-check.png
+- screenshots/disk-check.png

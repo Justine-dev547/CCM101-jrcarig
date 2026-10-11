@@ -41,8 +41,4 @@ In this laboratory activity, I performed basic cloud server monitoring using the
 
 This activity helped me understand the importance of monitoring a cloud server and its applications. By checking system resources, testing the website, reviewing logs, and monitoring Docker metrics, I learned how to identify possible performance problems and check whether a web server is working properly.
 
-## Evidence
 
-Screenshots are stored in the screenshots/ folder.
-
-localhost
